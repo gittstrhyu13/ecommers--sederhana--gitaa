@@ -1,177 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Gitastore.id</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HijabByTami</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
         body {
-            font-family: Arial;
-            margin: 0;
+            background-color: #f5efff; /* Warna latar belakang beige*/
+            color: #333;
+            max-width: 480px; /* Batasan text agar menyerupai tampilan mobile di mockup */
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+            background-color: #ffffff;
         }
 
-       header {
-            background-color: #e7c4e4;
-            text-align: center;
-            padding: 20px;
+        /* --- NAVBAR --- */
+        header {
+            background-color: #fcedff; /* Warna beige */
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        .logo {
-            width: 80px;
-            height: auto;}
-         .banner {
+
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            color: #333;
+        }
+
+        .cart-box {
+            background: #e2d4f0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* --- SEARCH BAR --- */
+        .search-container {
+            position: relative;
+        }
+
+        .search-container input {
             width: 100%;
-            height: 400px;   
+            padding: 12px 15px 12px 40px;
+            border: none;
+            border-radius: 10px;
+            background-color: #f1f3f4;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        /* --- MAIN HERO BANNER --- */
+        .main-content {
+            padding: 15px;
+            background-color: #f6eeff;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #c0b3e6, #dfccf2);
+            border-radius: 20px;
+            padding: 35px 20px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
             overflow: hidden;
-         }
-         .banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-}
-        .judul {
-            font-family: 'Santis', sans-serif;
-            font-size: 40px;
-            font-weight: bold;
-            margin: 0;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .slogan {
-            font-family: 'Santis', sans-serif;
-            font-size: 18px;
-            margin-top: 5px;
+        /* Efek simbol bintang /dekorasi samar di background seperti di gambar */
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            opacity: 0.15;
+            background-image: radial-gradient(circle at 50% 20%, transparent 60%, #fff 62%);
+            background-size: 40px 40px;
         }
 
-        nav {
-            background-color: #cfaadd;
-            padding: 10px;
-            text-align: center
+        .hero-banner h1 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
-        nav a {
-            color: white;
-            margin: 10px;
-            text-decoration: none;
-            font-weight: bold;
+        .hero-banner p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
 
-        nav a:hover {
-            color: deep purple;
-        }
-       .banner {
-    width: 100%;
-    height: 400px;   
-    overflow: hidden;
-}
-
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.button {
-    background-color: hotpink;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-
-        .produk {
+        .tag-badge {
             display: inline-block;
-            margin: 20px;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 6px 15px;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            backdrop-filter: blur(5px);
+            margin-bottom: 15px;
         }
 
-        .produk img {
-            width: 150px;
-            height: 150px;
+        .hero-subtext {
+            font-size: 0.85rem !important;
+            font-weight: 400 !important;
         }
-        .button {
-    background-color: #c084fc;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-}
 
-.button:hover {
-    background-color: #6d2bd9;
-}
+        /* --- PRODUCT GRID --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
 
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #e8dbf7;
+            padding: 8px;
+        }
 
-        footer {
-            background-color: #e7c4e4;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+        .product-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 12px;
+            background-color: #fff6fb;
+        }
+
+        .product-info {
+            padding: 8px 4px 4px 4px;
+        }
+
+        .product-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #444;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-price {
+            font-size: 0.9rem;
+            color: #8b5cf6;
+            font-weight: 700;
+            margin-top: 2px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Logo -->
     <header>
-    <!-- Logo -->
-    <img src= "logo.jpeg" class="logo">
+        <div class="nav-top">
+            <i class="fa-solid fa-bars" style="font-size: 1.2rem; color: #444;"></i>
+            <div class="brand-name">HijabByTami</div>
+            <div class="cart-box">
+                <i class="fa-solid fa-shopping-bag"></i> <span>0</span>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search">
+        </div>
+    </header>
 
-    <!-- Nama Toko -->
-    <h1 class="judul">Gita store</h1>
+    <main class="main-content">
+        
+        <div class="hero-banner">
+            <h1>Sentuhan Anggun Setiap Hari</h1>
+            <p>Temukan Koleksi Pashmina Mini Premium Yang Praktis, Tegak, Dan Nyaman Sepanjang Hari.</p>
+            
+            <div class="tag-badge">
+                ✦ cute • aesthetic • quality ✦
+            </div>
+            
+            <p class="hero-subtext">Ukurannya Mini, Cantiknya Maksimal,Sempurna Untuk Gaya casual look yang effortless</p>
+        </div>
 
-    <!-- Slogan -->
-    <p class="slogan">Tunjukan Gayamu Disini!</p>
-</header>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400" alt="Keychain 2" class="product-img">
+                <div class="product-info">
+                    <div class="product-title">Pashmina mini</div>
+                    <div class="product-price">Rp 50.000</div>
+                </div>
+            </div>
+        </div>
 
-    <!-- Menu -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="produk.html">Produk</a>
-        <a href="tentang kami.html">Tentang Kami</a>
-        <a href="kontak.html">Kontak</a>
-    </nav>
-
-<!-- Banner -->
-<section class="banner">
-    <img src="banner.jpeg"></section>
-
-<section class="judul">
-    <h3 style="text-align: center;" >Selamat Datang Di Gita Store</h3>
-    <p style="text-align: center;">Tunjukan Gayamu Disini!</p>
-    <h3 style="text-align: center;"><button class="button" style="text-align: center;">Belanja Sekarang</button></h3>
-</section>
-
-    <!-- Produk Best Seller -->
-<h2 style="text-align:center;">Best seller</h2>
-
-<h2 style="text-align:center;">
-    <div class="produk">
-    <img src="gambar1.jpeg">
-    <p><b>Pashmini</b></p>
-    <p>Rp50.000</p>
-    <button class="button">Beli Sekarang</button>
-</div>
-
-<div class="produk">
-    <img src="gambar2.jpeg">
-    <p><b>Pashmini</b></p>
-    <p>Rp50.000</p>
-    <button class="button">Beli Sekarang</button>
-</div>
-
-<div class="produk">
-    <img src="gambar3.jpeg">
-    <p><b>Pashmini</b></p>
-    <p>Rp50.000</p>
-    <button class="button">Beli Sekarang</button>
-</div>
-    <!-- Produk -->
-    <h2 style="text-align:center;">Produk Terbaru</h2>
-
-    <!-- Footer -->
-    <footer>
-        <p>Copyright 2026 - Gita Store</p>
-    </footer>
+    </main>
 
 </body>
 </html>
